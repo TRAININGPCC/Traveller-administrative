@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="UTF-8" />
     <title>TravelPort</title>
@@ -34,6 +34,9 @@
               <p>Galileo Apollo Webservices</p>
             </div>
             <div class="custom-card-body p-2">
+              <div th:if="${errorMessage}" style="color: red; font-weight: bold;">
+                <p th:text="${errorMessage}"></p>
+              </div>
               <form
                 class="mt-2"
                 action="/process-galileo-web-services"
